@@ -1,0 +1,32 @@
+% Tex root = ../cheatsheet.tex
+\section{Differenzielle Analysis in R\textsuperscript{n}}
+\subsection{Parzielle Ableitungen}
+\definition{3.3.11}{Gradient und Divergent}
+  \textbf{Gradient}: Wenn für die Funktion $f:U\rightarrow \mathbb R$ alle partiellen Ableitungen existieren für $x_0\in U$, dann ist der Vektor $$\begin{pmatrix}\partial_{x_1}f(x_0)\\\vdots\\\partial_{x_n}f(x_0)\end{pmatrix}$$
+    \textbf{Divergent} Wenn für eine Funktion $f=\{f_1,...,f_m\}:U\rightarrow\mathbb R^m$ alle partiellen ableitungen für alle $f_i$ bei $x_0\in U$ existieren, ist der Divergent die Trace der Jakobimatrix $$div(f)(x_0)=Tr(J_f(x_0))$$
+\subsection{Das Differential}
+\definition{3.4.2}{Differenzierbarkeit}
+  Wenn \(U\in\mathbb R^n\) eine offene Menge, \(f:U\rightarrow R^m\) eine Funktion und $A: \mathbb R^n\rightarrow\mathbb R^m$ eine affine Abbildung ist, dann ist $f$ bei $x_0\in U$ differenzierbar mit Differenzial A, falls:
+  \[\lim\limits_{\substack{x\rightarrow x_0 \\ x\neq x_0}}\frac{f(x)-f(x_0)-A(x-x_0)}{||x-x_0||}=0\]\\
+\proposition{3.4.4}{Eigenschaften von differenzierbaren Funktionen}
+  Wenn \(U\in\mathbb R^n\) eine offene Menge, \(f:U\rightarrow R^m\) eine differenzierbare Funktion dann gilt:
+  \begin{enumerate}
+    \item Die Funktion $f$ ist stetig auf $U$
+    \item Für die Funktion $f=[f_1,...,f_m]$ existieren alle \(\partial_{x_j}f_i\) mit \(1\leq j \leq n, 1\leq i\leq m\)
+  \end{enumerate}
+\proposition{3.4.6}{Differenzierbarkeit bei Funktionsoperationen} 
+  \(U\in\mathbb R^n\) offen, \(f,g:U\rightarrow\mathbb R^m\) differenzierbar:
+  \begin{enumerate}
+    \item \(f+g\) ist differenzierbar und \\ $d(f+g)(x_0)=df(x_0)+dg(x_0)$
+    \item Falls \(m=1: f\cdot g\) differenzierbar.
+    \item Falls \(m=1, g\neq0:\frac f g\) differenzierbar.
+  \end{enumerate}
+\proposition{3.4.7}{Differenzial von elementaren Funktionen}
+\proposition{3.4.9}{Kettenregel} \(U\in\mathbb R^n\) und \(V\in\mathbb R^m\) offen, \(f:U\rightarrow V, g:V\rightarrow\mathbb R^p\) differenzierbar.\\
+\textbf{Funktionen:} 
+Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0)$.\\
+\textbf{Jakobi Matrizen:}
+\(J_{g\circ f}(x_0)=J_g(f(x_0)\cdot J_f(x_0)\).\\
+\textbf{Gradienten:}
+\(\Delta_{g\circ f}=J{g\circ f}^T, \Delta_g=J_g^T\) also
+\(\Delta_{g\circ f}(x_0)=J_f(x_0)^T\cdot\Delta_g(f(x_0))\).\\
