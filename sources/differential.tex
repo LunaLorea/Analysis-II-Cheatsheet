@@ -30,3 +30,24 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
 \textbf{Gradienten:}
 \(\Delta_{g\circ f}=J{g\circ f}^T, \Delta_g=J_g^T\) also
 \(\Delta_{g\circ f}(x_0)=J_f(x_0)^T\cdot\Delta_g(f(x_0))\).\\
+\definition{3.4.11}{Der Tangentialraum}
+  \(U\in\mathbb{R}^n\) offen, \(f: U\rightarrow\mathbb{R}^m\) differenzierbar, \(x_0\in U\), \(A=df(x_0)\). Der Tangentialraum bei \(x_0\) des Graphen von \(f\) ist der Graph von \(g(x)=f(x_0)+A(x-x_0)\), also \(T=\{(x,g(x))\mid x\in\mathbb{R}^n\}\subseteq\mathbb{R}^n\times\mathbb{R}^m\).\\
+\definition{3.4.13}{Richtungsableitung}
+  \(U\in\mathbb{R}^n\) offen, \(f:U\rightarrow \mathbb{R}^m, v\in\mathbb{R}^n\setminus\{0\}\), \(x_0\in U\). Die Richtungsableitung von \(f\) bei \(x_o\) in richtung \(v\) ist \[D_v f(x_o) := J_g(0)=\begin{pmatrix}g'(0)_1\\\vdots\\g'(0)_m\end{pmatrix}\in\mathbb R^m\] für die Hilfsfunktion \(g : \{t\in\mathbb R\mid x_0 + tv\in U\}\rightarrow \mathbb R ^m\) \(g(t)=f(x_0+tv)\)\\
+\proposition{3.4.15}{Richtungsableitung von differenzierbaren Funktionen Berechnen}
+  \(U\in\mathbb R^n\) offen, \(f:U\rightarrow\mathbb R^m\) differenzierbar, \(v\in\mathbb R^m\setminus\{0\}, x_0\in U\). \\\(\implies D_vf(x_0)=df(x_0)(v)=J_f(x_0)\cdot v\) was auch bedeutet, dass die Richtungsableitung linear vom Richtungsvektor abhängen.\\
+  \(\implies D_{\lambda_1v_1+\lambda_2v_2}=\lambda_1D_{v_1}f(x_0)+\lambda_2D_{v_2}f(x_0)\)\\
+  \example{3.4.17}{Richtungsableitung von allgemeinen stetigen Funktionen berechnen.}
+  \(D_vf(x_0)=\lim\limits_{t\rightarrow0}\frac{f(x_0+tv)-f(x_0)}{t}\) Sollte die
+  daraus resultierende Funktion nicht linear von \(v\) abhängig sein, so ist
+  \(f\) nicht differenzierbar.\\
+\subsection{Höhere Ableitungen}
+  \definition{3.5.1}{C Notation}
+    \(U\subseteq\mathbb R^n\) offen.\\
+    \(C^0(U,\mathbb R^m):=\{f:U\rightarrow\mathbb R^m\mid f \text{ stetig}\}\)\\
+    \(C^k(U,\mathbb R^m):=\\
+    \begin{array}{ll}\{f:U\rightarrow\mathbb R^m\mid \forall i,j:\partial_jf_i\in C^{k-1}\}\\
+    \{f:U\rightarrow\mathbb R^m\mid\text{alle }\partial_{j_i}...\partial{j_k}f_i\in C^0(U,\mathbb R^m\}\\=\text{k-mal stetig differenzierbar}\end{array}\)
+    \(C^\infty(U,\mathbb R^m):=\bigcup\limits_{k=0}^\infty C^k(U,\mathbb R^m)\) 
+    
+
