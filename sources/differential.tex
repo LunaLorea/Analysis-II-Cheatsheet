@@ -40,7 +40,7 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
   \example{3.4.17}{Richtungsableitung von allgemeinen stetigen Funktionen berechnen.}
   \(D_vf(x_0)=\lim\limits_{t\rightarrow0}\frac{f(x_0+tv)-f(x_0)}{t}\) Sollte die
   daraus resultierende Funktion nicht linear von \(v\) abhängig sein, so ist
-  \(f\) nicht differenzierbar.\\
+  \(f\) nicht differenzierbar.
 \subsection{Höhere Ableitungen}
   \definition{3.5.1}{C Notation}
     \(U\subseteq\mathbb R^n\) offen.\\
@@ -48,6 +48,35 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
     \(C^k(U,\mathbb R^m):=\\
     \begin{array}{ll}\{f:U\rightarrow\mathbb R^m\mid \forall i,j:\partial_jf_i\in C^{k-1}\}\\
     \{f:U\rightarrow\mathbb R^m\mid\text{alle }\partial_{j_i}...\partial{j_k}f_i\in C^0(U,\mathbb R^m\}\\=\text{k-mal stetig differenzierbar}\end{array}\)
-    \(C^\infty(U,\mathbb R^m):=\bigcup\limits_{k=0}^\infty C^k(U,\mathbb R^m)\) 
+    \(C^\infty(U,\mathbb R^m):=\bigcup\limits_{k=0}^\infty C^k(U,\mathbb
+    R^m)\)\\
+    \(=\text{Beliebig oft differenzierbar bzw. glatt.}\)\\ 
+  \example{3.5.2}{Nützliche C Regeln}
+    \(*\) \textbf{Polynome} mit n Variablen sind in \(C^\infty(\mathbb R^n,\mathbb R)\).\\
+    \(*\) \(f\in C^k\iff f_1,...,f_m\in C^k\)\\
+    \(*\) \(C^k\) ist ein \textbf{Vektorraum}\\
+    \(*\) Für \(k\neq 0\) ist \(\partial_j: C^k(U,\mathbb R)\rightarrow
+    C^{k-1}(U, \mathbb R)\)
+    \(*\) \(C^k(U,\mathbb R)\) ist abgeschlossen unter \textbf{Produkten} und
+    \textbf{Summen}.
+    (sofern diese Definiert sind).
+    \(*\) Eine \textbf{Verknüpfung} von \(C^k\) Funktionen ist wieder \(C^k\).\\
+  \proposition{3.5.4}{Satz von Schwarz}
+    \(U\in\mathbb R^n\) offen, \(f\in C^2(U,\mathbb R)\). Dann gilt:
+    \(\partial_i\partial_jf=\partial_j\partial_if\).
+    Im Allgemeinen wenn \(f\in C^k\) dann lassen sich \(k\) parzielle
+    Ableitungen beliebig vertauschen.\\
+  \definition{3.5.9}{Die Hessische}
+    \(U\in R^n\) offen, \(f:U\rightarrow \mathbb R, x_0\in U\).
+    Die Hessische von \(f\) bei \(x_0\) ist die quadratische \(n\times
+    n\)-Matrix
+    \[H_f(x_0)=(\partial_i\partial_j f(x_0))_{\substack{1\leq i\leq n\\ 1\leq
+    j\leq n}}\]
+    Nach dem Satz von Schwarz ist \(H\) symmetrisch, falls \(f\in C^2(U,\mathbb
+    R)\).\\
+
     
+    
+
+
 
