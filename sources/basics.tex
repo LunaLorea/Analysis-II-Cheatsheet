@@ -1,0 +1,18 @@
+% Tex root = ../cheatsheet.tex
+\section{Basics}
+\newcounter{basicChapter}
+\newcommand{\basicdef}[1]{\definition{0.\arabic{basicChapter}}{#1}\stepcounter{basicChapter}}
+\subsection{Vector Basics}
+  \basicdef{Skalarprodukt}
+\subsection{Notation}
+  \basicdef{Landau Notation}
+    \(U\in\mathbb R^n, h:U\rightarrow\mathbb R, y\in U\)\\
+    \(*\) \(o(h)=\{f:U\rightarrow\mathbb R\mid \lim\limits_{\substack{x\rightarrow y\\x\neq y}}\frac{f(x)}{h(x)}=0\}\)\\
+    \(*\) \(f=o(h):=f\in o(h)\)\\
+    \(*\) \(o(f)=o(h):=o(f)\in o(h)\)\\
+    \(*\) \(f=o(1)\iff \lim\limits_{x\rightarrow y}f(x)=0\)\\
+    \(*\) \(\lambda o(h) +\mu o(h) = o(h)\;\; \forall \lambda,\mu\in\mathbb R\)\\
+    \(*\) \(g\cdot o(h)=o(gh) = o(g)\cdot o(h)\)\\
+    \(*\) \(o(h^d)=o(h^e)\;\forall e\leq d\)
+    \(*\) Für Monome \(p\) in \(x_i-y_i\) von Grad \(d\): \(p=o(||x-y||^e)\;\forall e\leq d\) \& \(o(p)=o(||x-y||^d)\)
+

@@ -74,9 +74,38 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
     j\leq n}}\]
     Nach dem Satz von Schwarz ist \(H\) symmetrisch, falls \(f\in C^2(U,\mathbb
     R)\).\\
+\subsection{Taylorpolynome}
+  \definition{3.7.1}{Das k-te Taylorpolynom von f bei y}
+    \(f\in C^k(U,\mathbb R), y\in U\).\\
+    \[\begin{array}{cc}
+      T_kf(x)=\sum\limits_{|i|\leq k}\frac{\partial_if(y)\cdot(x-y)^i}{i!}\\
+      f(x)=T_kf(x)+o(||x-y||^k)
+    \end{array}\]
+    \(*\) \(i=(i_1,...,i_n), i_j\in\mathbb Z\) ist ein Tupel.\\
+    \(*\) \(|i| = i_1+...+i_n\)\\
+    \(*\) \(\partial_i=\partial_1^{i_1}...\;\partial_n^{i_n}\)\\
+    \(*\) \((x-y)^i=(x_1-y_1)^{i_1}\cdot...\cdot(x_n-y_n)^{i_n}\)\\
+    \(*\) \(i!=i_1!\cdot...\cdot i_n!\)
 
-    
-    
+    \[\begin{array}{ll}
+      f(x)=g(x)h(x) \\\implies T_kf(x)=T_kg(x)T_kh(x)\\
+      f(x)=g(x)+h(x) \\\implies T_kf(x)=T_kg(x)+T_kh(x)\\
+      f(x)=g(h(x))   \\\implies T_kf(x)=T_kg(T_kh(x))\\
+    \end{array} \]
+  \additional{Nützliche Taylorreihen}
+  Für \(k\neq\infty\) addiere den Fehler \(o(||x-y||^2)\)
+  \[\begin{array}{lll}
+    \sin(x) & = \lim\limits_{k\rightarrow\infty}\sum_{n=0}^k (-1)^n \frac{x^{2n+1}}{(2n+1)!}           \\
+            & = x - \frac{x^3}{6} + \frac{x^5}{120} - \dotsb&\\             \\\text{für alle} \ x.\\
+    \cos(x) & = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}               \\
+            & = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \dotsb&\\              \\\text{für alle} \ x.\\
+    \tan(x) & = \sum_{n=1}^\infty \frac{B_{2n}(-4)^n(1-4^n)}{(2n)!}x^{2n-1} \\
+            & = x + \frac{x^3}{3} + \frac{2 x^5}{15} + \dotsb&\\            \\\text{für } |x| < \frac{\pi}{2}.\\
+    \sec(x) & = \sum_{n=0}^\infty (-1)^n \frac{E_{2n}}{(2n)!}x^{2n}         \\
+            & = 1 + \frac{x^2}{2} + \frac{5 x^4}{24} + \dotsb&              \\\text{für } |x| < \frac{\pi}{2}.\\\\
 
+    \text{To Do: More of them :3}
+  \end{array}\]
+         
 
 
