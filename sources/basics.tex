@@ -2,9 +2,26 @@
 \section{Basics}
 \newcounter{basicChapter}
 \newcommand{\basicdef}[1]{\definition{0.\arabic{basicChapter}}{#1}\stepcounter{basicChapter}}
-\subsection{Vector Basics}
-  \basicdef{Skalarprodukt}
-\subsection{Notation}
+\subsection{Lineare Algebra}
+  \basicdef{Skalarprodukt}\\
+  \basicdef{Norm} Für $u \in\mathbf R^n, ||u|| = \sqrt[2]{u_1^2+...+u_n^2}$\\
+  \basicdef{Definite Matrizen}
+  $A\in \mathbb R^{n\times n}$ heist...\\
+  ...\textbf{positiv definit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv>0$\\
+  ...\textbf{positiv semidefinit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv\leq0$\\
+  ...\textbf{negativ definit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv<0$\\
+  ...\textbf{negativ semidefinit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv\geq0$\\
+  ...\textbf{indefinit} falls es $v,w$ gibt mit $v^TAv>0 \land w^TAw<0$\\
+  Für die eigenwerte $\lambda$ von $A$ gilt:\\
+  \begin{tabular}{ll}
+    A pos. def.       & $\iff\forall\lambda:\lambda>0$\\
+    A pos. semidef.   & $\iff\forall\lambda:\lambda\geq0$\\
+    A neg. def.       & $\iff\forall\lambda:\lambda<0$\\
+    A neg. semidef.   & $\iff\forall\lambda:\lambda\leq0$\\
+    A indef.          & $\iff$ A hat pos. und neg. eigenwerte.\\
+    $\det(A)\neq0$    & $\implies\forall\lambda:\lambda\neq0$\\
+  \end{tabular}
+  \subsection{Notation}
   \basicdef{Landau Notation}
     \(U\in\mathbb R^n, h:U\rightarrow\mathbb R, y\in U\)\\
     \(*\) \(o(h)=\{f:U\rightarrow\mathbb R\mid \lim\limits_{\substack{x\rightarrow y\\x\neq y}}\frac{f(x)}{h(x)}=0\}\)\\

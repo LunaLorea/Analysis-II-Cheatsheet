@@ -28,12 +28,12 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
 \textbf{Jakobi Matrizen:}
 \(J_{g\circ f}(x_0)=J_g(f(x_0)\cdot J_f(x_0)\).\\
 \textbf{Gradienten:}
-\(\Delta_{g\circ f}=J{g\circ f}^T, \Delta_g=J_g^T\) also
-\(\Delta_{g\circ f}(x_0)=J_f(x_0)^T\cdot\Delta_g(f(x_0))\).\\
+\(\bigtriangledown_{g\circ f}=J{g\circ f}^T, \bigtriangledown_g=J_g^T\) also
+\(\bigtriangledown_{g\circ f}(x_0)=J_f(x_0)^T\cdot\bigtriangledown_g(f(x_0))\).\\
 \definition{3.4.11}{Der Tangentialraum}
   \(U\in\mathbb{R}^n\) offen, \(f: U\rightarrow\mathbb{R}^m\) differenzierbar, \(x_0\in U\), \(A=df(x_0)\). Der Tangentialraum bei \(x_0\) des Graphen von \(f\) ist der Graph von \(g(x)=f(x_0)+A(x-x_0)\), also \(T=\{(x,g(x))\mid x\in\mathbb{R}^n\}\subseteq\mathbb{R}^n\times\mathbb{R}^m\).\\
 \definition{3.4.13}{Richtungsableitung}
-  \(U\in\mathbb{R}^n\) offen, \(f:U\rightarrow \mathbb{R}^m, v\in\mathbb{R}^n\setminus\{0\}\), \(x_0\in U\). Die Richtungsableitung von \(f\) bei \(x_o\) in richtung \(v\) ist \[D_v f(x_o) := J_g(0)=\begin{pmatrix}g'(0)_1\\\vdots\\g'(0)_m\end{pmatrix}\in\mathbb R^m\] für die Hilfsfunktion \(g : \{t\in\mathbb R\mid x_0 + tv\in U\}\rightarrow \mathbb R ^m\) \(g(t)=f(x_0+tv)\)\\
+  \(U\in\mathbb{R}^n\) offen, \(f:U\rightarrow \mathbb{R}^m, v\in\mathbb{R}^n\setminus\{0\}\), \(x_0\in U\). Die Richtungsableitung von \(f\) bei \(x_o\) in Richtung \(v\) ist \[D_v f(x_o) := J_g(0)=\begin{pmatrix}g'(0)_1\\\vdots\\g'(0)_m\end{pmatrix}\in\mathbb R^m\] für die Hilfsfunktion \(g : \{t\in\mathbb R\mid x_0 + tv\in U\}\rightarrow \mathbb R ^m\) \(g(t)=f(x_0+tv)\)\\
 \proposition{3.4.15}{Richtungsableitung von differenzierbaren Funktionen Berechnen}
   \(U\in\mathbb R^n\) offen, \(f:U\rightarrow\mathbb R^m\) differenzierbar, \(v\in\mathbb R^m\setminus\{0\}, x_0\in U\). \\\(\implies D_vf(x_0)=df(x_0)(v)=J_f(x_0)\cdot v\) was auch bedeutet, dass die Richtungsableitung linear vom Richtungsvektor abhängen.\\
   \(\implies D_{\lambda_1v_1+\lambda_2v_2}=\lambda_1D_{v_1}f(x_0)+\lambda_2D_{v_2}f(x_0)\)\\
@@ -94,18 +94,100 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
     \end{array} \]
   \additional{Nützliche Taylorreihen}
   Für \(k\neq\infty\) addiere den Fehler \(o(||x-y||^2)\)
-  \[\begin{array}{lll}
-    \sin(x) & = \lim\limits_{k\rightarrow\infty}\sum_{n=0}^k (-1)^n \frac{x^{2n+1}}{(2n+1)!}           \\
-            & = x - \frac{x^3}{6} + \frac{x^5}{120} - \dotsb&\\             \\\text{für alle} \ x.\\
-    \cos(x) & = \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}               \\
-            & = 1 - \frac{x^2}{2} + \frac{x^4}{24} - \dotsb&\\              \\\text{für alle} \ x.\\
-    \tan(x) & = \sum_{n=1}^\infty \frac{B_{2n}(-4)^n(1-4^n)}{(2n)!}x^{2n-1} \\
-            & = x + \frac{x^3}{3} + \frac{2 x^5}{15} + \dotsb&\\            \\\text{für } |x| < \frac{\pi}{2}.\\
-    \sec(x) & = \sum_{n=0}^\infty (-1)^n \frac{E_{2n}}{(2n)!}x^{2n}         \\
-            & = 1 + \frac{x^2}{2} + \frac{5 x^4}{24} + \dotsb&              \\\text{für } |x| < \frac{\pi}{2}.\\\\
+  \renewcommand{\arraystretch}{1.5}
+  \begin{tabular}{|l|l|}
+    \hline
+    
+    $\begin{array}{l}\sin(x)\\\forall x\in\mathbb R\end{array}$ & 
+      $\begin{array}{l}
+        \lim\limits_{k\rightarrow\infty}\sum_{n=0}^k (-1)^n \frac{x^{2n+1}}{(2n+1)!}\\
+        x - \frac{x^3}{6} + \frac{x^5}{120} - \dotsb\\
+      \end{array}$\\
 
-    \text{To Do: More of them :3}
-  \end{array}\]
-         
+    \hline
+    
+    $\begin{array}{l}\cos(x)\\\forall x\in\mathbb R\end{array}$ &
+      $\begin{array}{l}
+        \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\
+        1 - \frac{x^2}{2} + \frac{x^4}{24} - \dotsb
+      \end{array}$\\
+
+    \hline
+    
+    $\begin{array}{l} \tan(x)\\ \forall x<\frac{\pi}{2}\end{array}$ &
+      $\begin{array}{l}
+        \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\
+        x + \frac{x^3}{3} + \frac{2 x^5}{15} + \dotsb
+      \end{array}$\\
+
+    \hline
+    
+    $\begin{array}{l} \sec(x)\\ \forall x<\frac{\pi}{2}\end{array}$ &
+      $\begin{array}{l}
+        \sum_{n=0}^\infty (-1)^n \frac{E_{2n}}{(2n)!}x^{2n}\\
+        1 + \frac{x^2}{2} + \frac{5 x^4}{24} + \dotsb
+      \end{array}$\\
+    
+    \hline
+
+    $\begin{array}{l}   \end{array}$ & Do More! \\
+
+    \hline
+
+  \end{tabular}
+
+\subsection{Kritische Punkte}
+  \definition{3.8.0}{Extremstellen}
+    Für $U\subseteq\mathbb R^n, f:U\rightarrow\mathbb R$ Dann hat $f$ bei $y\in U$ ein\\
+    \textbf{lokales Minimum} falls $\exists\varepsilon>0$ sodass: $||x-y||<
+    \varepsilon, x\in U\implies f(y)\leq f(x)$\\
+    \textbf{lokales Maximum} falls $\exists\varepsilon>0$ sodass: $||x-y||<
+    \varepsilon, x\in U\implies f(y)\geq f(x)$\\
+    \textbf{lokales Extremum} falls $y$ ein lokales Minimum oder ein lokales
+    Maximum ist.\\
+    \textbf{globales Minimum} falls $x\in U\implies f(y)\leq f(x)$\\
+    \textbf{globales Minimum} falls $x\in U\implies f(y)\geq f(x)$\\
+    \textbf{globales Extremum} falls $y$ ein globales Minimum oder ein globales
+    Maximum ist.
+    Bmkg: Globale Extrema sind jeweils auch lokale Extrema\\
+  \proposition{3.8.1}{} $y\in U$ eine lokale Extremstelle $\implies$ y ist ein Kritischer Punkt.\\
+  \definition{3.8.2}{} $y\in U$ heisst \textbf{kritischer Punkt} falls $\bigtriangledown f(y)=0$\\
+  \definition{3.8.6}{Nicht-degenerierte-Stellenn}
+    Für $U\in\mathbb R^n$ offen und $f:U\rightarrow\mathbb R^m,f\in C^2$
+    Ein Punkt $x\in U$ heist nicht-degeneriert, falls für die Hessische $H_f(x)$
+    gilt, dass $\det(H_f(x))\neq0$.\\
+  \definition{3.8.7.1}{Extremstellen im eindimensionalen bereich}
+    $*$ $f'(y)=0,f''(y)>0\implies y$ ist lokale Minimalstelle.\\
+    $*$ $f'(y)=0,f''(y)<0\implies y$ ist lokale Maximalstelle.\\
+    $*$ $y$ ist Sattelpunkt $\implies f'(y)=0,f''(y)=0$\\
+  \definition{3.8.7.2}{Extremstellen auf Funktionen $f:(U\in\mathbb R^n)\rightarrow \mathbb R$}
+    \begin{tabular}{lll}
+      $*$ $H_f(y)$ pos. def.  &$\implies$&$ y$ ist lok. Minimalstelle.\\
+                              &$\implies$&$ H_f(y)$ ist pos. semidefinit.\\
+      $*$ $H_f(y)$ neg. def.  &$\implies$&$ y$ ist lok. Maximalstelle.\\
+                              &$\implies$&$ H_f(y)$ ist neg. semidefinit\\
+      $*$ $H_f(y)$ indef.     &$\implies$&$ y$ ist Sattelpunkt.\\
+      $*$ $\det(H_f)\neq0$ &$\implies$&$ H_f(y)$ ist pos. def. oder\\ &&neg. def.
+      oder indef.
+    \end{tabular}
+    (Siehe \href{#1.1}{Lineare Algebra} basics)\\
+    \rmrk{3.8.7.3}{Definitheit für $2\times2$ Matrizen A}
+    \begin{minipage}{\linewidth}
+      \includegraphics[width=\linewidth]{./sources/entscheidungsbaum-definitheit.png}
+      \label{fig:fig1}
+    \end{minipage}
+  \rmrk{3.8.8}{If someone wants to contribute this pls do Oo. (Sylvester
+  Kriterium)}
+\subsection{Umkehrsatz}
+  \definition{3.10.0}{lokale umkehrbarkeit}
+    $U\in R^n$ offen. $f:U\rightarrow\mathbb R^n$ heisst \textbf{lokal
+    umkehrbar} bei $y\in U$ falls offene $V,W\subseteq\mathbb R^n$ existieren
+    mit $y\in V, f(y)\in w$, sodass $f|_V:V\rightarrow W$ bijektiv ist.\\
+    Bzw. es existiert $g:W\rightarrow V$ sodass $f|_V\circ g=id_W, g\circ
+    f|_W=id_V$. $g$ ist die umkehrfunktion von $f|_V$\\
+  \definition{3.10.2}{Satz der Umkehrfunktion}
+  $U\in\mathbb R^n$ offen, $f:U\rightarrow\mathbb R^n, f\in C^k, k\geq1$ und
+  $J_f(y)$ eine invertierbare Matrix, dann ist $f$ lokal umkehrbar bei y, die
+  Umkehrfunktion $g$ ist $C^k$ und $$J_g(f(y))=(J_f(y))^{-1}$$
 
 
