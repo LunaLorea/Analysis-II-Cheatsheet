@@ -1,11 +1,9 @@
 % Tex root = ../cheatsheet.tex
-\section{Basics}
 \newcounter{basicChapter}
-\newcommand{\basicdef}[1]{\definition{0.\arabic{basicChapter}}{#1}\stepcounter{basicChapter}}
+\newcommand{\basicdef}[2]{\definition{0.{#2}.\arabic{basicChapter}}{#1}\stepcounter{basicChapter}}
 \subsection{Lineare Algebra}
-  \basicdef{Skalarprodukt}\\
-  \basicdef{Norm} Für $u \in\mathbf R^n, ||u|| = \sqrt[2]{u_1^2+...+u_n^2}$\\
-  \basicdef{Definite Matrizen}
+  \basicdef{Norm}{1} Für $u \in\mathbf R^n, ||u|| = \sqrt[2]{u_1^2+...+u_n^2}$\\
+  \basicdef{Definite Matrizen}{1}
   $A\in \mathbb R^{n\times n}$ heist...\\
   ...\textbf{positiv definit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv>0$\\
   ...\textbf{positiv semidefinit} falls $\forall v\in\mathbb R^n\setminus\{0\}: v^TAv\leq0$\\
@@ -22,7 +20,7 @@
     $\det(A)\neq0$    & $\implies\forall\lambda:\lambda\neq0$\\
   \end{tabular}
   \subsection{Notation}
-  \basicdef{Landau Notation}
+  \basicdef{Landau Notation}{2}
     \(U\in\mathbb R^n, h:U\rightarrow\mathbb R, y\in U\)\\
     \(*\) \(o(h)=\{f:U\rightarrow\mathbb R\mid \lim\limits_{\substack{x\rightarrow y\\x\neq y}}\frac{f(x)}{h(x)}=0\}\)\\
     \(*\) \(f=o(h):=f\in o(h)\)\\
@@ -32,4 +30,10 @@
     \(*\) \(g\cdot o(h)=o(gh) = o(g)\cdot o(h)\)\\
     \(*\) \(o(h^d)=o(h^e)\;\forall e\leq d\)
     \(*\) Für Monome \(p\) in \(x_i-y_i\) von Grad \(d\): \(p=o(||x-y||^e)\;\forall e\leq d\) \& \(o(p)=o(||x-y||^d)\)
-
+\subsection{Methoden}
+  \basicdef{Koeffizientenvergleich}{3}
+    Zwei Polynome sind genau dann gleich, wenn ihre Koeffizienten
+    übereinstimmen.
+    $Q(x) = P(x) \iff \deg(Q)=\deg(P)=I \land \forall i, 0 \leq i \leq I: q_i = p_i$
+    Wenn wir unbekannte in den koeffizienten haben können wir damit ein
+    Gleichungsystem machen.

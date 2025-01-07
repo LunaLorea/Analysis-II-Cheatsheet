@@ -47,6 +47,13 @@
   Eine Lösung ist eine k-mal differenzierbare $f:I\rightarrow \mathbb C$
   $$f^{(k)}(x)+...+a_0(x)f(x)=b(x)\hspace{1cm}\forall x\in\mathbb R$$ wobei
   $f^{(j)}=(Re\; f(x))^{(j)} + i \cdot(Im\; f(x))^{(j)}$\\
+  \definition{2.2.5}{Superpositionsprinzip}
+  $$\begin{array}{rll}
+    f_0&\text{Lösung der ODE mit inhomogenität}&b\\
+    g_0&\text{Lösung der ODE mit inhomogenität}&c\\
+    \lambda f_0+\mu g_0&\text{Lösung der ODE mit inhomogenität}&\lambda b +\mu
+    c.
+  \end{array}$$
   \definition{2.2.8}{}
   Für eine lineare ODE $(1)$ $k$-ter Ordnung mit stetigen $a_{k-1},...,a_0,b$ gilt:\\
   $*$ Die Lösungen der zugehörigen homogenen ODE $(2)$ bilden einen $\mathbb 
@@ -85,6 +92,59 @@
   \indent $\iff z'e^{-A}=b$\\
   \indent $\iff z'= e^{A}b$\\
   \indent $\iff z$ ist Stammfunktion von $e^{A}b$
+\subsection{Lineare ODEs mit konstanten Koeffizienten}
+  $$y^{(k)},a_{k-1}y^{(k-1)},...,a_0y=b$$ für $a_{k-1},...,a_0\in\mathbb C$ und
+  $b:I\rightarrow\mathbb C$.\\
+  \subsubsection{Homogene ODE}
+    \definition{2.4.0.1}{Charakteristisches Polynom}
+      $$P(t)=t^k+a_{k-1}t^{k-1}+...+a_0$$
+      Ist das Charakteristische Polynom der linearen ODE.
+    \proposition{2.4.0.2}{Lösen der homogenen ODE}
+      \begin{enumerate}
+        \item $P(\alpha)=0$ für $\alpha\in\mathbb C\implies e^{\alpha x}$ löst die
+          homogene ODE.
+        \item Hat $P$ keine mehrfachen Nullstellen, so ist $\{e^{\alpha x}\mid
+          P(\alpha)=0\}$ eine Lösungsbasis.
+      \end{enumerate}
+    \proposition{2.4.0.3}{Basis des Lösungsraums}
+      Hat $P$ die Nullstellen $\alpha_1,...,\alpha_l$ mit Vielfachheit
+      $v_1,...,v_l$, so ist bildet die Menge $$\{x^je^{\alpha_i x}\mid 1\leq i<l,
+      0\leq j<v_{i-1}\}$$ eine Bases des Lösungsraums.\\
+    \rmrk{2.4.0.3}{}
+      Falls $a_0,...,a_{k-1}\in\mathbb R$, dann gilt: $$P(\alpha)=0\iff
+      P(\overline\alpha)=0$$ Man findet eine Basis des reelwertigen Lösungsraum,
+      indem man $e^{\alpha x}, e^{\overline\alpha x}$ ersetzt durch $$e^{\beta
+      x}\cos(\gamma x),e^{\beta x}\sin(\gamma x)$$ für $\alpha=\beta + i\gamma$.
+  \subsubsection{Inhomogene ODE}
+    \definition{2.4.1}{Methode der unbestimmten Koeffizienten}
+    Wir schauen uns dafür die Form der Inhomogenität an:
+    \begin{enumerate}
+      \item[$*$] $b(x)=x^de^{\alpha x}$\hfill (Spezialfälle: $b=x^d$, 
+        $b=e^{\alpha x}$)\\
+        $\implies$ es gibt eine Lösung $f_0(x)=Q(x)e^{\alpha x}$, für ein
+        Polynom $Q$ mit $\deg Q\leq d+j$, wobei $\alpha$ $j$-fache Nullstelle von
+        $P$ (falls $P(\alpha)\neq0 \iff j=0$)
+      \item[$*$] $b(x)=x^d\cos(\alpha x)$ oder $x^d\sin(\alpha x)$\\
+        $\implies$ es gibt eine Lösung $f_0(x)=Q_1(x)\cos(\alpha
+        x)+Q_2\sin(\alpha x)$, für Polynome $Q_1,Q_2$ mit Grad jeweils
+        $\deg(Q_i) \leq d+j$, falls $\alpha_i$ $j$-fache Nullstelle von $P$
+    \end{enumerate}
+    Anleitung:
+    \begin{enumerate}
+      \item Benutze das Superpositionsprinzip (2.2.5) um die inhomogenität so 
+        aufzuteilen, dass sie auf die oben genannten gleichungen passen.
+      \item Finde die passende Funktion $f_0$ indem du $\alpha$ aus der (teil) inhomogenität
+        abliest und in die vorgegebene Funktion einsetzt.
+      \item Setze $f_0$ für $y$ in die ODE ein bzw die jeweiligen ableitungen.
+      \item Finde die $Q_i$ für welche die Gleichung für alle $x$ gilt mit hilfe
+        des Koeffizientenvergleichs.
+            (Die $Q_i$ sind jeweils von der Form
+        $q_0x^{i}+q_1x^{i-1}+...+q_i$ wobei $i=\deg Q$)
+      \item Setze die $Q_i$ in $f_0$ ein um eine Lösung zu erhalten.
+      \item Berechne die lösung der ursprungs ODE indem du die resultate der
+        Teilhomogenitäten nach dem Superpositionsprinzip wieder
+        zusammenrechnest.
+    \end{enumerate}
 \subsection{Other Methods}
   \definition{2.6.1}{Separation der Variablen}
   Für ODEs der Form $y'=a(y)\cdot b(x)$ und $a,b$ stetig.
