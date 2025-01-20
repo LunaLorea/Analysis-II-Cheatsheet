@@ -7,6 +7,8 @@
 \usepackage[german]{babel}
 \usepackage{graphicx}
 \graphicspath{./media/}
+\usepackage{esint}
+\usepackage{pdfpages}
 % ALWAYS LOAD THESE PACKAGES LAST
 \usepackage{hyperref}
 \usepackage[a4paper,landscape,margin=1.5cm]{geometry} % Use landscape orientation
@@ -18,6 +20,7 @@
 
 \begin{document}
 \begin{multicols*}{3}
+  
   \maketitle % Write Title author and stuff
   \definition{0.0}{Contribution}
   Falls du Fehler findest oder Dinge fehlen, öffne doch ein issue auf \color{Maroon4}\href{https://github.com/LunaLorea/Analysis-II-Cheatsheet}{\underline{GitHub}}\color{defaultcolor}  \;bzw. kannst du auch einen Pullrequest machen wenn du die Zeit dafür hast :)\\
@@ -25,6 +28,18 @@
   \input{sources/basics.tex}
   \input{sources/gewöhnliche-differentialgleichungen.tex}
   \input{sources/differential.tex}
+  \input{sources/integralrechnung.tex}
+  \columnbreak
+  \section{Usefull formulas}
+    \begin{minipage}{\linewidth-2cm}
+      \includegraphics[width=\linewidth]{./media/Useful_Integrals_and_Identities_1.png}
+    \end{minipage}
+    \columnbreak
+    \newpage
+    $\;$ \\
+    $\;$ \\
+    \begin{minipage}{\linewidth-2cm}
+      \includegraphics[width=\linewidth]{./media/Useful_Integrals_and_Identities_2.png}
+    \end{minipage}
 \end{multicols*}
-
 \end{document} 

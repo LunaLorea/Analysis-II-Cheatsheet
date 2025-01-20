@@ -1,6 +1,86 @@
 % Tex root = ../cheatsheet.tex
 \section{Differenzielle Analysis in R\textsuperscript{n}}
+\subsection{Einleitung}
+  \begin{itemize}
+    \item[$*$] $[a,b]\rightarrow\mathbb R^m$ Pfad oder Weg
+    \item[$*$] $\mathbb R^n\rightarrow\mathbb R$ Skalarfeld
+    \item[$*$] $\mathbb R^n\rightarrow\mathbb R^n$ Vektorfeld
+  \end{itemize}
+\subsection{Stetigkeit}
+  \definition{3.2.1}{Konvergenz einer Folge}
+    Eine Folge $x_1,x_2,...\in\mathbb R^n$ konvergiert gegen $y\in\mathbb R^n$
+    falls 
+    $$
+      \forall\varepsilon>0\;\exists N\forall k\geq N: ||x_k-y||<\varepsilon
+    $$
+    Dann schreibt man $\lim\limits_{i\rightarrow\infty}x_i=y$.\\
+    $$\begin{array}{lclr}
+      \lim\limits_{i\rightarrow\infty}x_i=y&\iff&\lim\limits_{i\rightarrow\infty}||x_i-y||=0&\\
+      &\iff&\lim\limits_{i\rightarrow\infty}x_{i,j}=y\;\;\forall j\in\{1,...,n\}
+    \end{array}$$
+  \definition{3.2.3}{Stetigkeit}
+    Eine Funktion $f:U\rightarrow \mathbb R^m$ auf $U\subseteq\mathbb R^n$
+    heisst \textbf{stetig bei} $x_0\in U$ falls
+    $\forall\varepsilon>0\exists\delta>0\forall x\in U:$
+    $$||x-x_0||<\delta\implies||f(x)-f(x_0)||<\varepsilon$$
+    und \textbf{stetig} falls $f$ bei jedem punkt $x_0\in U$ stetig ist.\\
+  \proposition{3.2.4}{}
+    $f$ stetig bei $x_0\iff$ Für jede Folge $x_0,x_1,...\in U$ mit
+    $\lim\limits_{i\rightarrow\infty}x_i=x_0$ gilt
+    $\lim\limits_{i\rightarrow\infty}f(x_i)=f(x_0)$\\
+  \definition{3.2.5}{Konvergenz einer Funktion}
+    $f:U\rightarrow\mathbb R^m$ konvergiert bei $x_0\in U$ gegeb $y\in\mathbb
+    R^m$ falls $\forall\varepsilon>0\;\exists\delta>0\;\forall x\in U:$
+    $$
+      ||x-x_0||<\delta \text{ und } x\neq x_0\implies ||y-f(x)||<\varepsilon
+    $$
+    Dann schreibt man $\lim\limits_{\substack{x\rightarrow x_0\\x\neq x_0}}f(x)=y$.\\
+  \proposition{3.2.7}{}
+    $f: U\rightarrow V, g: V\rightarrow\mathbb W$ mit $U\subseteq\mathbb R^n$,
+    $V\subseteq\mathbb R^m$ $f,g$ stetig $\implies g\circ f:U\rightarrow W$ ist
+    stetig.\\\\
+    $\lim\limits_{\substack{x\rightarrow x_0\\ x\neq x_0}}f(x)=y\iff$ Für jede
+    Folge $x_1,x_2,...\in U\setminus\{x_0\}$ mit
+    $\lim\limits_{i\rightarrow\infty} x_i=x_0$ gilt
+    $\lim\limits_{i\rightarrow\infty}f(x_i)=y$\\
+  \definition{3.2.11}{$U\subseteq\mathbb R^n$ heisst}
+    \begin{enumerate}
+      \item[$*$] \textbf{beschränkt} falls $\{||x||\mid x\in U\}\subseteq\mathbb
+        R^+_0$
+      \item[$*$] \textbf{abgeschlossen} falls $x_1,x_2,...\in U, 
+        \lim\limits_{k\rightarrow\infty}x_k=y\in\mathbb R^n\implies y\in U$
+      \item[$*$] \textbf{kompakt} falls $U$ beschränkt und abgeschlossen.
+      \item[$*$] \textbf{offen} falls $\forall x\in U\;\exists\delta>0:$
+        $$\{y\in\mathbb R^n\mid|x_i-y_i|<\delta\text{ für alle } i\}$$
+    \end{enumerate}
+  \proposition{3.2.13}{}
+    $f:\mathbb R^n\rightarrow\mathbb R^m$ stetig. Dann:
+    \begin{enumerate}
+      \item[(1)] $V\subseteq\mathbb R^m$ abg $\implies 
+        f^{-1}(V)\subseteq\mathbb R^n$ abg.
+      \item[(2)] $V\subseteq\mathbb R^m$ offen $\implies
+        f^{-1}(V)\subseteq\mathbb R^n$ offen.
+    \end{enumerate}
+  \proposition{3.2.15}{}
+    $U\subseteq\mathbb R^n$ nicht-leer und kompakt, $f:U\rightarrow\mathbb R$
+    stetig $\implies f$ nimmt auf $U$ $Min.$ und $Max.$ an, d.h. es gibt
+    $x_+,x_-\in U$ sodass $\forall y\in U: f(x_-)\leq f(y)\leq f(x_+)$
 \subsection{Parzielle Ableitungen}
+  \proposition{3.3.2}{}
+    $U\in\subseteq^n$ offen $\iff \mathbb R^n\setminus U$ abgeschlossen.\\
+  \definition{3.3.5}{$i$-te partielle Ableitung}
+    $U\subseteq\mathbb R^n$ offen, $f:U\rightarrow\mathbb R$. Für
+    $i\in\{1,...,n\}$ ist die $i$-te partielle Ableitung von $f$ bei $y\in U$
+    $$\partial_if(y)=g'(y_i)\in\mathbb R$$ für $g:\{t\in\mathbb
+    R\mid(y_1,...,t,...,y_n))\in U\}\rightarrow\mathbb R$
+    $$g(t)=f(y_1,...,t,...,y_n)$$ falls $g$ bei $y$ diffbar ist.\\
+    \textbf{Weitere Schreibweisen:}\\
+    $\partial_if=\partial_{x_i}f=f_{x_i}=\frac{\partial f}{\partial_{x_i}}$\\
+  \definition{3.3.9}{Jacobimatrix}
+    $U\subseteq\mathbb R^n$ offen, $f:U\rightarrow\mathbb R^m$. Die $m\times
+    n$-Matrix $$J_f(x)=(\partial_jf_i(x))_{\substack{1\leq i\leq m\\1\leq j\leq
+    n}}$$
+    heisst Jacobimatrix von $f$ bei $x$.\\
 \definition{3.3.11}{Gradient und Divergent}
   \textbf{Gradient}: Wenn für die Funktion $f:U\rightarrow \mathbb R$ alle partiellen Ableitungen existieren für $x_0\in U$, dann ist der Vektor $$\begin{pmatrix}\partial_{x_1}f(x_0)\\\vdots\\\partial_{x_n}f(x_0)\end{pmatrix}$$
     \textbf{Divergent} Wenn für eine Funktion $f=\{f_1,...,f_m\}:U\rightarrow\mathbb R^m$ alle partiellen ableitungen für alle $f_i$ bei $x_0\in U$ existieren, ist der Divergent die Trace der Jakobimatrix $$div(f)(x_0)=Tr(J_f(x_0))$$
@@ -92,50 +172,8 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
       f(x)=g(x)+h(x) \\\implies T_kf(x)=T_kg(x)+T_kh(x)\\
       f(x)=g(h(x))   \\\implies T_kf(x)=T_kg(T_kh(x))\\
     \end{array} \]
-  \additional{Nützliche Taylorreihen}
-  Für \(k\neq\infty\) addiere den Fehler \(o(||x-y||^2)\)
-  \renewcommand{\arraystretch}{1.5}
-  \begin{tabular}{|l|l|}
-    \hline
-    
-    $\begin{array}{l}\sin(x)\\\forall x\in\mathbb R\end{array}$ & 
-      $\begin{array}{l}
-        \lim\limits_{k\rightarrow\infty}\sum_{n=0}^k (-1)^n \frac{x^{2n+1}}{(2n+1)!}\\
-        x - \frac{x^3}{6} + \frac{x^5}{120} - \dotsb\\
-      \end{array}$\\
-
-    \hline
-    
-    $\begin{array}{l}\cos(x)\\\forall x\in\mathbb R\end{array}$ &
-      $\begin{array}{l}
-        \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\
-        1 - \frac{x^2}{2} + \frac{x^4}{24} - \dotsb
-      \end{array}$\\
-
-    \hline
-    
-    $\begin{array}{l} \tan(x)\\ \forall x<\frac{\pi}{2}\end{array}$ &
-      $\begin{array}{l}
-        \sum_{n=0}^\infty (-1)^n \frac{x^{2n}}{(2n)!}\\
-        x + \frac{x^3}{3} + \frac{2 x^5}{15} + \dotsb
-      \end{array}$\\
-
-    \hline
-    
-    $\begin{array}{l} \sec(x)\\ \forall x<\frac{\pi}{2}\end{array}$ &
-      $\begin{array}{l}
-        \sum_{n=0}^\infty (-1)^n \frac{E_{2n}}{(2n)!}x^{2n}\\
-        1 + \frac{x^2}{2} + \frac{5 x^4}{24} + \dotsb
-      \end{array}$\\
-    
-    \hline
-
-    $\begin{array}{l}   \end{array}$ & Do More! \\
-
-    \hline
-
-  \end{tabular}
-
+  Am ende des Cheatsheets sind Lucas Werners 'Some Useful Integrals and 
+  Trigonometric Identities' eingefügt.
 \subsection{Kritische Punkte}
   \definition{3.8.0}{Extremstellen}
     Für $U\subseteq\mathbb R^n, f:U\rightarrow\mathbb R$ Dann hat $f$ bei $y\in U$ ein\\
