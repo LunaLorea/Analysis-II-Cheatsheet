@@ -85,14 +85,14 @@
     $\int\limits_Uaf(x)+bg(x)dx=a\int\limits_Uf(x)dx+b\int\limits_Ug(x)dx$\\
   \definition{4.2.0.3}{Inlkusion-Exklusion}
     $\int\limits_{U\cup V}f(x)dx=\int\limits_Uf(x)dx+\int\limits_Vf(x)dx-\int\limits_{U\cap V}f(x)dx$\\
-  \definition{4.2.0.4}{Satz von Fubimi für 'Quader'}
+  \definition{4.2.0.4}{Satz von Fubini für 'Quader'}
     $U_1\in\mathbb R^{n_1}, U_2\in\mathbb R^{n_2}$ kompakt. Dann:
     $$\begin{array}{ll}
       \int\limits_{U\times
       V}f(x)dx&=\int\limits_{U_1}\left(\int\limits_{U_2}f(x_1,x_2)dx_2\right)dx_1\\
       &=\int\limits_{U_2}\left(\int\limits_{U_1}f(x_1,x_2)dx_1\right)dx_2
     \end{array}$$
-  \definition{4.2.0.5}{Allgemeiner Satz von Fubimi}
+  \definition{4.2.0.5}{Allgemeiner Satz von Fubini}
     $U\subseteq\mathbb R^m=\mathbb R^{n_1}\times\mathbb R^{n_2}$\\
     $V=\{x_1\in\mathbb R^{n_1}\mid\exists x_2:(x_1,x_2)\in U\}\subseteq\mathbb
     R^{n_1}$\\
@@ -110,7 +110,7 @@
     $\left|\int\limits_Uf(x)dx\right|\leq\int\limits_U\left|f(x)\right|dx$\\
   \definition{4.2.0.8}{Volumen}
     Das Volumen von $U$ ist definiert als $vol(U):=\int\limits_U1dx$. Der Satz von
-    Fubimi kann zur berechnung des Volumens verwendet werden. zB Schnittfläche
+    Fubini kann zur berechnung des Volumens verwendet werden. zB Schnittfläche
     üver Höhe integrieren.\\
   \definition{4.2.3}{Parametrisierte und vernachlässigbare Mengen}
     \begin{enumerate}
@@ -162,8 +162,9 @@
       \item[$*$] $\varphi(U)=V, \varphi|_u$ injektiv und $C^1$
       \item[$*$] $|\det J_\varphi(x)|$ lässt sich stetig auf $\overline U$
         fortsetzen.
-    \end{enumerate}
-\subsection{Der Schwerpunkt}
+    \end{enumerate}\\
+    Mittels Transformationsformel folgt $\int_{-\infty}^{\infty}e^{-x^2} = \sqrt{\pi}$.
+    \subsection{Der Schwerpunkt}
   \definition{4.5.0}{Der Schwerpunkt}
     Der \textbf{Schwerpunkt} $\overline x\in\mathbb R^n$ einer kompakten Menge
     $U\in\mathbb R^n$ ist gegeben durch $\overline
