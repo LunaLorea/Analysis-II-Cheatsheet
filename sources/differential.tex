@@ -7,6 +7,10 @@
     \item[$*$] $\mathbb R^n\rightarrow\mathbb R^n$ Vektorfeld
   \end{itemize}
 \subsection{Stetigkeit}
+  \definition{3.2.0}{Śtetige Differenzierbarkeit}
+    Eine Funktion heist stetig differenzierbar falls man sie in jedem Punkt 
+    ableiten kann, und die Ableitung stetig ist. \\
+    Bei mehrdimensionalen Funktionen müssen alle Partitiellen Ableitungen existieren und stetig sein.
   \definition{3.2.1}{Konvergenz einer Folge}
     Eine Folge $x_1,x_2,...\in\mathbb R^n$ konvergiert gegen $y\in\mathbb R^n$
     falls 
@@ -82,9 +86,14 @@
     n}}$$
     heisst Jacobimatrix von $f$ bei $x$.\\
 \definition{3.3.11}{Gradient und Divergent}
-  \textbf{Gradient ($\nabla$)}: Wenn für die Funktion $f:U\rightarrow \mathbb R$ alle partiellen Ableitungen existieren für $x_0\in U$, dann ist der Vektor $$\begin{pmatrix}\partial_{x_1}f(x_0)\\\vdots\\\partial_{x_n}f(x_0)\end{pmatrix}$$
-  \textbf{Trace}: Die Trace einer quadratische Matrix ist definiert als $Tr(A)=\sum\limits_{i=1}^n a_{ii}$\\
+  \textbf{Gradient:}: Wenn für die Funktion $f:U\rightarrow \mathbb R$ alle 
+  partiellen Ableitungen existieren für $x_0\in U$, dann ist der Vektor 
+  $$\bigtriangledown
+  f:=\begin{pmatrix}\partial_{x_1}f(x_0)\\\vdots\\\partial_{x_n}f(x_0)\end{pmatrix}$$
+  der Gradient von $f$\\
+  \textbf{Trace:} Die Trace einer quadratische Matrix ist definiert als $Tr(A)=\sum\limits_{i=1}^n a_{ii}$\\
   \textbf{Divergent:} Wenn für eine Funktion $f=\{f_1,...,f_m\}:U\rightarrow\mathbb R^m$ alle partiellen ableitungen für alle $f_i$ bei $x_0\in U$ existieren, ist der Divergent die Trace der Jakobimatrix $$div(f)(x_0)=Tr(J_f(x_0))$$
+>>>>>>> baa0851 (some corrections)
 \subsection{Das Differential}
 \definition{3.4.2}{Differenzierbarkeit}
   Wenn \(U\in\mathbb R^n\) eine offene Menge, \(f:U\rightarrow R^m\) eine Funktion und $A: \mathbb R^n\rightarrow\mathbb R^m$ eine affine Abbildung ist, dann ist $f$ bei $x_0\in U$ differenzierbar mit Differenzial A, falls:
@@ -110,7 +119,7 @@
 \textbf{Funktionen:} 
 Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0)$.\\
 \textbf{Jakobi Matrizen:}
-\(J_{g\circ f}(x_0)=J_g(f(x_0)\cdot J_f(x_0)\).\\
+\(J_{g\circ f}(x_0)=J_g(f(x_0))\cdot J_f(x_0)\).\\
 \textbf{Gradienten:}
 \(\bigtriangledown_{g\circ f}=J{g\circ f}^T, \bigtriangledown_g=J_g^T\) also
 \(\bigtriangledown_{g\circ f}(x_0)=J_f(x_0)^T\cdot\bigtriangledown_g(f(x_0))\).\\
@@ -154,8 +163,10 @@ Dann ist $g\circ f$ differenzierbar und $d(g\circ f)(x_0)=dg(f(x_0))\circ df(x_0
     \(U\in R^n\) offen, \(f:U\rightarrow \mathbb R, x_0\in U\).
     Die Hessische von \(f\) bei \(x_0\) ist die quadratische \(n\times
     n\)-Matrix
-    \[H_f(x_0)=(\partial_i\partial_j f(x_0))_{\substack{1\leq i\leq n\\ 1\leq
-    j\leq n}}\]
+    \[H_f(x_0)=(\partial_i\partial_j f(x_0))_{\substack{1\leq i\leq n\\ 1\leq j\leq n}}\]
+    Z.B. $\begin{pmatrix}
+      \partial_1\partial_1f&\partial_1\partial_2f\\\partial_2\partial_2f&\partial_2\partial_2f
+    \end{pmatrix}$\\
     Nach dem Satz von Schwarz ist \(H\) symmetrisch, falls \(f\in C^2(U,\mathbb
     R)\).\\
 \subsection{Taylorpolynome}
